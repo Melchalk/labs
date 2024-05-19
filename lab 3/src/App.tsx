@@ -9,7 +9,7 @@ export default function App() {
     <BrowserRouter>
       <NavigationBar />
       <Routes>
-        <Route path='*' element={<Navigate to='/'/>}/>
+        <Route path='*' element={<Navigate to='/home'/>}/>
         <Route path='/auth' element={<LoginPage />}/>
         <Route path='/logout' element={<LogoutPage />}/>
         <Route path='/register' element={<RegisterPage />}/>
