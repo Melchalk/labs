@@ -70,12 +70,12 @@ export function RegisterPage() {
           setStateRequest({...stateRequest, userName: t.target.value})}/>
       </FloatingLabel>
       <FloatingLabel label="Phone" className="mb-3">
-        <Form.Control placeholder="name@example.com" onChange={(t) => 
+        <Form.Control placeholder="Phone" onChange={(t) => 
           setStateRequest({...stateRequest, userPhone: t.target.value})}/>
       </FloatingLabel>
       <FloatingLabel label="Password">
         <Form.Control type="password" placeholder="Password" onChange={(t) => 
-          setStateRequest({...stateRequest, userPhone: t.target.value})}/>
+          setStateRequest({...stateRequest, userPassword: t.target.value})}/>
       </FloatingLabel>
       <br />
       <Button variant="warning" onClick={() => onRegisterUser()}>Ok</Button>
