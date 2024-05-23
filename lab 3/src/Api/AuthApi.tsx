@@ -1,8 +1,8 @@
 import { appApiIns } from "../Api/AppApi";
 
 export interface LoginResult{
-    accessToken : string;
-    refreshToken : string;
+    token : string;
+    refreshToken : string | null;
 }
 
 export interface RegisterRequest{
@@ -12,16 +12,15 @@ export interface RegisterRequest{
 }
 
 export function loginUser(userPhone:string, userPassword:string){
-    return appApiIns.post('auth/login',{
-        phone: userPhone,
-        password: userPassword
+    return appApiIns.post('login',{
+        username: "mor_2314",
+        password: "83r5^_"
     });
 }
 
 export function registerUser(request:RegisterRequest){
-    return appApiIns.post('auth/register',{
-        name: request.userName,
-        phone: request.userPhone,
-        password: request.userPassword
+    return appApiIns.post('login',{
+        username: "mor_2314",
+        password: "83r5^_"
     });
 }

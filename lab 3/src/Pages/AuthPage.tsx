@@ -26,21 +26,21 @@ export function LoginPage() {
     const onLoginUser = () => {
       loginUser(statePhone, statePassword)
         .then((res) =>{
-            dispatch(addToken(res.data?.accessToken));
+            dispatch(addToken(res.data?.token));
             navigate('/home');
         })
     };
 
     return (
       <>
-        <FloatingLabel controlId="floatingInput" label="Phone" className="mb-3">
+        <FloatingLabel controlId="floatingInput" label="Phone" className="col-md-2 mx-auto mb-3">
           <Form.Control type="phone" placeholder="name@example.com" onChange={(t) => setStatePhone(t.target.value)}/>
         </FloatingLabel>
-        <FloatingLabel controlId="floatingPassword" label="Password">
+        <FloatingLabel controlId="floatingPassword" label="Password" className="col-md-2 mx-auto">
           <Form.Control type="password" placeholder="Password" onChange={(t) => setStatePassword(t.target.value)}/>
         </FloatingLabel>
         <br />
-        <Button variant="warning" onClick={() => onLoginUser()}>Ok</Button>
+        <Button className="d-grid col-1 mx-auto" variant="warning" onClick={() => onLoginUser()}>Ok</Button>
       </>
     );
 }
@@ -58,27 +58,27 @@ export function RegisterPage() {
   const onRegisterUser = () => {
     registerUser(stateRequest)
       .then((res) =>{
-          dispatch(addToken(res.data?.accessToken));
+          dispatch(addToken(res.data?.token));
           navigate('/home');
       })
   };
 
   return (
     <>
-      <FloatingLabel label="Name" className="mb-3">
+      <FloatingLabel label="Name" className="col-md-2 mx-auto mb-3">
         <Form.Control placeholder="Name" onChange={(t) => 
           setStateRequest({...stateRequest, userName: t.target.value})}/>
       </FloatingLabel>
-      <FloatingLabel label="Phone" className="mb-3">
+      <FloatingLabel label="Phone" className="col-md-2 mx-auto mb-3">
         <Form.Control placeholder="Phone" onChange={(t) => 
           setStateRequest({...stateRequest, userPhone: t.target.value})}/>
       </FloatingLabel>
-      <FloatingLabel label="Password">
+      <FloatingLabel label="Password" className="col-md-2 mx-auto">
         <Form.Control type="password" placeholder="Password" onChange={(t) => 
           setStateRequest({...stateRequest, userPassword: t.target.value})}/>
       </FloatingLabel>
       <br />
-      <Button variant="warning" onClick={() => onRegisterUser()}>Ok</Button>
+      <Button className="d-grid col-1 mx-auto" variant="warning" onClick={() => onRegisterUser()}>Ok</Button>
     </>
   );
 }
