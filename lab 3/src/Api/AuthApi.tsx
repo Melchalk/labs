@@ -11,13 +11,6 @@ export interface RegisterRequest{
     userPassword:string
 }
 
-export enum TeachingPositions
-{
-    Assistant,
-    Teacher,
-    SeniorLecturer
-}
-
 export function loginUser(userPhone:string, userPassword:string){
     return appApiIns.post('auth/login',{
         phone: userPhone,
